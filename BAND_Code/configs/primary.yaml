@@ -1,0 +1,19 @@
+cohort: NatMEG-PD
+label: pd_vs_hc
+independent_unit: participant
+preprocessing:
+  bandpass_hz: [1, 100]
+  notch_hz: [50]
+  sample_rate_hz: 250
+  window_seconds: 4
+  overlap_fraction: 0.5
+  beta_hz: [13, 30]
+model:
+  latent_width: 12
+  hidden_width: 24
+  stochastic_draws: 16
+  physiological_auxiliary_weight: 0.05
+evaluation:
+  grouped_folds: 5
+  seed: 42
+  primary_metric: balanced_accuracy
